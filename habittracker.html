@@ -7,9 +7,7 @@
                 
 </head>
 <body>
-    <!-- title/subtitle -->
-    <h1 id="title">rinimee's journal</h1>
-    <h2 id="subtitle">habit tracker ꒰ ˶• ༝ •˶꒱</h2>
+    <h1 id="main title"> rinimee's journal ₍^. ‸ .^₎⟆</h1>
     <!-- tabs area -->
     <div id="tabcontainer">
         <button class="tabbutton" onclick="openTab('tab1')">✩₊˚.⋆journal info⋆⁺₊✧</button>
@@ -36,6 +34,9 @@
 
     <!-- calendar area -->
 <div id="tab2" class="tabcontent" style="display: none;">
+     <!-- title/subtitle -->
+    <h2 id="title">habit calender</h2>
+    <h2 id="subtitle">habit tracker ꒰ ˶• ༝ •˶꒱</h2>
     <div id="calendercontainer">
         <div id="calendardiv">
             <div id="calendarheading">
@@ -212,8 +213,8 @@
     }
 
     #title{
-        margin-top: 100px;
-        line-height: 10px;
+        margin-top: 10px;
+        font-size: 20px;
     }
 
     #subtitle{
@@ -437,6 +438,12 @@
     color: #333;
     font-family: monospace, sans-serif;
 }
+
+.page-title{
+    text-align: center;
+    margin-top: 180px;
+    line-height: 10px;
+}
 </style>
 
 <script>
@@ -618,7 +625,24 @@ function openTab(tabId, btnElement) {
     btnElement.classList.add("active-tab");
 }
 
+function triggerUpload(id){
+    document.getElementById('file-input-'+id).click();
+}
 
+function previewImage(event, id) {
+    var reader = new FileReader();
+    reader.onload = function(){
+        var outputImg = document.getElementById('album-img-'+id);
+        var uploadText = document.getElementById('upload-text-'+id);
+
+        outputImg.src = reader.result;
+        outputImg.style.display = 'block'
+        uploadText.style.display = 'none'
+    };
+    if(event.target.files[0]){
+        reader.readAsDataURL(event.target.files[0]);
+    }  
+}
 
    </script>
 </html>
