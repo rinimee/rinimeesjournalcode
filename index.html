@@ -18,21 +18,23 @@
     </div>
 
     <!--tab 1 journal info-->
+ <!--tab 1 journal info-->
     <div id="tab1" class="tabcontent" style="display: block;">
         <div class="card-container">
-        <!-- Pink Header Stripe -->
-        <div class="card-header">
-            <p class="card-title">journal info (｡•̀ᴗ-)✧</p>
+            <!-- Pink Header Stripe -->
+            <div class="card-header">
+                <p class="card-title">journal info (｡•̀ᴗ-)✧</p>
+            </div>
+            <div class="card-body" style="padding: 20px;">
+                <p>welcome to my journal! ₍ᐢ. .ᐢ₎</p>
+                <div class="centered-item">name: <input type="text" id="info-name" class="song-title-input" placeholder="type name..." /></div>
+                <div class="centered-item">date made: <input type="text" id="info-date" class="song-title-input" placeholder="MM/DD/YYYY" /></div>
+                <div class="centered-item">email: <input type="text" id="info-email" class="song-title-input" placeholder="type email..." /></div>
+                <div class="centered-item">phone: <input type="text" id="info-phone" class="song-title-input" placeholder="type phone..." /></div>
+                <div class="centered-item">extra: <input type="text" id="info-extra" class="song-title-input" placeholder="type extra..." /></div>
+                <button id="save-info-btn" class="resetbutton" style="margin-top: 15px;">save info ( ˶°ㅁ°) .ᐟ.ᐟ</button>
+            </div>
         </div>
-            <p>welcome to my journal! ₍ᐢ. .ᐢ₎</p>
-            <p class="centered-item">name: [your name here!]</p>
-            <p class="centered-item">date made: [first date of usage!]</p>
-            <p class="centered-item">email: [your email here!]</p>
-            <p class="centered-item">phone: [your phone number here!]</p>
-            <p class="centered-item">extra: [any other info here!]</p>
-            <p class="centered-item">♡(>ᴗ•)</p>
-        </div>
-
     </div>
 
     <!-- calendar area -->
@@ -659,13 +661,82 @@ function previewImage(event, id) {
         var uploadText = document.getElementById('upload-text-'+id);
 
         outputImg.src = reader.result;
-        outputImg.style.display = 'block'
-        uploadText.style.display = 'none'
+        outputImg.style.display = 'block';
+        uploadText.style.display = 'none';
+
+        // Save the base64 image string to localStorage
+        localStorage.setItem("saved_album_img_" + id, reader.result);
     };
     if(event.target.files[0]){
         reader.readAsDataURL(event.target.files[0]);
     }  
 }
 
+/* Journal Info LocalStorage Setup */
+    var infoFields = ["name", "date", "email", "phone", "extra"];
+    
+    // Load saved info on page load
+    for (var i = 0; i < infoFields.length; i++) {
+        var fieldId = "info-" + infoFields[i];
+        var inputElement = document.getElementById(fieldId);
+        var savedValue = localStorage.getItem("journal_" + infoFields[i]);
+        if (savedValue && inputElement) {
+            inputElement.value = savedValue;
+        }
+    }
+
+    // Save info on button click
+    var saveInfoBtn = document.getElementById("save-info-btn");
+    if (saveInfoBtn) {
+        saveInfoBtn.onclick = function() {
+            for (var i = 0; i < infoFields.length; i++) {
+                var fieldId = "info-" + infoFields[i];
+                var inputElement = document.getElementById(fieldId);
+                if (inputElement) {
+                    localStorage.setItem("journal_" + infoFields[i], inputElement.value);
+                }
+            }
+            alert("saved your journal info! ヾ( ˃ᴗ˂ )◞•*✰");
+        };
+    }
+
+    /* --- Habit Title LocalStorage --- */
+    var habitInput = document.getElementById("habittitle-input");
+    var savedHabitTitle = localStorage.getItem("saved_habit_title");
+    if (savedHabitTitle && habitInput) {
+        habitInput.value = savedHabitTitle;
+    }
+    if (habitInput) {
+        habitInput.oninput = function() {
+            localStorage.setItem("saved_habit_title", habitInput.value);
+        };
+    }
+
+    /* --- Song Titles & Covers LocalStorage --- */
+    for (var i = 1; i <= 6; i++) {
+        // Load saved song title
+        var songInput = document.querySelector(".song-card:nth-child(" + i + ") .song-title-input");
+        var savedSongName = localStorage.getItem("saved_song_title_" + i);
+        if (savedSongName && songInput) {
+            songInput.value = savedSongName;
+        }
+        if (songInput) {
+            songInput.oninput = (function(index, inputEl) {
+                return function() {
+                    localStorage.setItem("saved_song_title_" + index, inputEl.value);
+                };
+            })(i, songInput);
+        }
+
+        // Load saved album image
+        var albumImg = document.getElementById("album-img-" + i);
+        var uploadText = document.getElementById("upload-text-" + i);
+        var savedImgData = localStorage.getItem("saved_album_img_" + i);
+        if (savedImgData && albumImg && uploadText) {
+            albumImg.src = savedImgData;
+            albumImg.style.display = 'block';
+            uploadText.style.display = 'none';
+        }
+    }
    </script>
 </html>
