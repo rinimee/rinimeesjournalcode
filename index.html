@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>rinimee's journal</title>
+    <link rel="icon" type="image/x-icon" href="../car.png">
+    <link href="https://fonts.cdnfonts.com/css/cute-cat" rel="stylesheet">
+                
+</head>
+<body>
+    <div class="title-box">
+        <h1 id="main title"> rinimee's journal ₍^. ‸ .^₎⟆</h1>
+    </div>
+    <!-- tabs area -->
+    <div id="tabcontainer">
+        <button class="tabbutton" onclick="openTab('tab1')">✩₊˚.⋆journal info⋆⁺₊✧</button>
+        <button class="tabbutton" onclick="openTab('tab2')">✩₊˚.⋆habit tracker⋆⁺₊✧</button>
+        <button class="tabbutton" onclick="openTab('tab3')">✩₊˚.⋆my favorite songs⋆⁺₊✧</button>
+    </div>
+
+    <!--tab 1 journal info-->
+    <div id="tab1" class="tabcontent" style="display: block;">
+        <div class="card-container">
+        <!-- Pink Header Stripe -->
+        <div class="card-header">
+            <p class="card-title">journal info (｡•̀ᴗ-)✧</p>
+        </div>
+            <p>welcome to my journal! ₍ᐢ. .ᐢ₎</p>
+            <p class="centered-item">name: srinika pola</p>
+            <p class="centered-item">date made: 07/25/2026</p>
+            <p class="centered-item">email: srinikapola@gmail.com</p>
+            <p class="centered-item">phone: 7047745930</p>
+            <p class="centered-item">extra: nothing else ♡(>ᴗ•)</p>
+        </div>
+
+    </div>
+
+    <!-- calendar area -->
+<div id="tab2" class="tabcontent" style="display: none;">
+     <!-- title/subtitle -->
+    <h2 id="title">habit calender</h2>
+    <h2 id="subtitle">habit tracker ꒰ ˶• ༝ •˶꒱</h2>
+    <div id="calendercontainer">
+        <div id="calendardiv">
+            <div id="calendarheading">
+                <input type="text" id="habittitle-input" placeholder="enter new habit (｡•̀ᴗ-)✧" />
+                <p id="totaldays">0/31</p>
+             </div>
+            <div id="calenderContent">
+                <div id="tracker">
+                    <div class="days">
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                    </div>
+                    <div class="days">
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                    </div>
+                    <div class="days">
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                    </div>
+                    <div class="days">
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                    </div>
+                    <div class="days">
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                        <div class="day">1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <button id="resetbutton" class="resetbutton">reset habits ( ˶°ㅁ°) .ᐟ.ᐟ</button>
+</div>
+
+ <!--tab 3 fav songs-->
+ <!-- TAB 3: Fav Songs -->
+<div id="tab3" class="tabcontent" style="display: none;">
+    <!-- Pink Header Pill -->
+    <div class="song-header-pill">
+        <h2>favorite songs (｡•̀ᴗ-)✧</h2>
+        <p>current playlist d(｡- .•)b ♬⋆.˚</p>
+    </div>
+
+    <!-- Grid of 6 Blue Song Cards -->
+    <div class="song-grid">
+        <!-- Card 1 -->
+        <div class="song-card">
+            <div class="album-upload-box" onclick="triggerUpload(1)">
+                <img id="album-img-1" src="" style="display:none;" />
+                <span id="upload-text-1">click to add cover ✧</span>
+                <input type="file" id="file-input-1" accept="image/*" onchange="previewImage(event, 1)" hidden>
+            </div>
+            <input type="text" class="song-title-input" placeholder="type song name..." />
+            <div class="player-controls">
+                1:35 ───ㅇ───── 3:47<br>
+                ↻ ◁ || ▷ ↺<br>
+                ᴠᴏʟᴜᴍᴇ : ▮▮▮▮▮▮▯▯▯
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="song-card">
+            <div class="album-upload-box" onclick="triggerUpload(2)">
+                <img id="album-img-2" src="" style="display:none;" />
+                <span id="upload-text-2">click to add cover ✧</span>
+                <input type="file" id="file-input-2" accept="image/*" onchange="previewImage(event, 2)" hidden>
+            </div>
+            <input type="text" class="song-title-input" placeholder="type song name..." />
+            <div class="player-controls">
+                1:35 ───ㅇ───── 3:47<br>
+                ↻ ◁ || ▷ ↺<br>
+                ᴠᴏʟᴜᴍᴇ : ▮▮▮▮▮▮▯▯▯
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="song-card">
+            <div class="album-upload-box" onclick="triggerUpload(3)">
+                <img id="album-img-3" src="" style="display:none;" />
+                <span id="upload-text-3">click to add cover ✧</span>
+                <input type="file" id="file-input-3" accept="image/*" onchange="previewImage(event, 3)" hidden>
+            </div>
+            <input type="text" class="song-title-input" placeholder="type song name..." />
+            <div class="player-controls">
+                1:35 ───ㅇ───── 3:47<br>
+                ↻ ◁ || ▷ ↺<br>
+                ᴠᴏʟᴜᴍᴇ : ▮▮▮▮▮▮▯▯▯
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="song-card">
+            <div class="album-upload-box" onclick="triggerUpload(4)">
+                <img id="album-img-4" src="" style="display:none;" />
+                <span id="upload-text-4">click to add cover ✧</span>
+                <input type="file" id="file-input-4" accept="image/*" onchange="previewImage(event, 4)" hidden>
+            </div>
+            <input type="text" class="song-title-input" placeholder="type song name..." />
+            <div class="player-controls">
+                1:35 ───ㅇ───── 3:47<br>
+                ↻ ◁ || ▷ ↺<br>
+                ᴠᴏʟᴜᴍᴇ : ▮▮▮▮▮▮▯▯▯
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="song-card">
+            <div class="album-upload-box" onclick="triggerUpload(5)">
+                <img id="album-img-5" src="" style="display:none;" />
+                <span id="upload-text-5">click to add cover ✧</span>
+                <input type="file" id="file-input-5" accept="image/*" onchange="previewImage(event, 5)" hidden>
+            </div>
+            <input type="text" class="song-title-input" placeholder="type song name..." />
+            <div class="player-controls">
+                1:35 ───ㅇ───── 3:47<br>
+                ↻ ◁ || ▷ ↺<br>
+                ᴠᴏʟᴜᴍᴇ : ▮▮▮▮▮▮▯▯▯
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="song-card">
+            <div class="album-upload-box" onclick="triggerUpload(6)">
+                <img id="album-img-6" src="" style="display:none;" />
+                <span id="upload-text-6">click to add cover ✧</span>
+                <input type="file" id="file-input-6" accept="image/*" onchange="previewImage(event, 6)" hidden>
+            </div>
+            <input type="text" class="song-title-input" placeholder="type song name..." />
+            <div class="player-controls">
+                1:35 ───ㅇ───── 3:47<br>
+                ↻ ◁ || ▷ ↺<br>
+                ᴠᴏʟᴜᴍᴇ : ▮▮▮▮▮▮▯▯▯
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<style>
+    body{
+       background-image: url(carbackground.png);
+       background-size: cover;
+       background-color:rgb(0, 0, 0);
+       background-blend-mode: lighten;
+       text-align: center;
+       font-family: 'Cute Cat', sans-serif;
+    }
+
+    #main-title {
+        font-size: 24px;
+        margin: 0;
+        color: #000;
+        line-height: 1;                      
+    }
+    #title{
+        margin-top: 10px;
+        font-size: 26px;
+    }
+
+    #subtitle{
+        font-size: 18px;
+        margin-bottom:20px;
+    }
+
+    #calendercontainer{
+        display: flex;
+        justify-content: end;
+    }
+
+    #calendardiv{
+        background-color: rgb(211, 240, 253);
+        border-radius: 10px 10px 20px 20px;
+        margin: auto;
+        align-content:center;
+        text-align: center;
+        width: 400px;
+    }
+
+ #calendarheading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Keeps text centered vertically */
+    border-radius: 10px 10px 0px 0px;
+    border: 2px solid rgb(132, 140, 153);
+    border-bottom:none;
+    padding: 10px 20px; /* Added top/bottom padding instead of line-height: 0px */
+    font-size: 20px;
+    background-color: rgb(247, 219, 255);
+}
+
+/* Remove default paragraph margins so flexbox centers them neatly */
+#calendarheading p {
+  margin: 0; 
+}
+
+#calenderContent{
+    padding:20px;
+    border:2px solid rgb(132, 140, 153);
+    border-radius: 0px 0px 20px 20px;
+    border-top:none;
+}
+
+.days{
+    display: flex;
+}
+
+.day{
+    width: 30px;
+    margin: 3px;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 20px;
+    /*background-color: rgb(247, 219, 255);*/
+}
+
+#tabcontainer{
+    display: flex;
+    justify-content:center;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.tabbutton{
+    font-family: 'Cute Cat', sans-serif;
+    font-size: 16px;
+    background-color: rgb(211, 240, 253);
+    border: 2px solid rgb(132, 140, 153);
+    border-radius: 8px;
+    padding: 6px 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.tabcard{
+    background-color: rgb(211, 240, 253);
+    border: 2px solid rgb(132, 140, 153);
+    border-radius: 12px;
+    padding: 20px;
+    width: 340px;
+    margin: auto;
+}
+
+.card {
+    background-color: rgb(211, 240, 253);
+    border: 2px solid rgb(132, 140, 153);
+    border-radius: 12px;
+    padding: 20px;
+    width: 380px;
+    margin: 0 auto;
+    text-align: center;
+}
+.activetab{
+    background-color: rgb(247, 219, 255);
+    font-weight: bold;
+}
+
+/* Card Container (Matches Calendar Div) */
+.card-container {
+    background-color: rgb(211, 240, 253); /* Same blue background */
+    border: 2px solid rgb(132, 140, 153);
+    border-radius: 12px;
+    width: 380px;
+    margin: 0 auto;
+    overflow: hidden; /* Keeps the top pink bar neatly inside the rounded corners */
+}
+
+/* Pink Top Header Stripe */
+.card-header {
+    background-color: rgb(247, 219, 255); /* Pink header stripe */
+    border: 2px rgb(132, 140, 153);
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Inner Content Area */
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.centered-item {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.song-header-pill {
+    background-color: rgb(247, 219, 255);
+    border: 2px solid rgb(132, 140, 153);
+    border-radius: 20px;
+    width: 320px;
+    margin: 0 auto 25px auto;
+    padding: 10px;
+}
+
+.song-header-pill h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.song-header-pill p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+.song-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.song-card {
+    background-color: rgb(211, 240, 253);
+    border: 2px solid rgb(132, 140, 153);
+    border-radius: 16px;
+    padding: 15px;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.album-upload-box {
+    width: 140px;
+    height: 140px;
+    background-color: #ffffff;
+    border: 2px dashed rgb(132, 140, 153);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.album-upload-box span {
+    font-size: 12px;
+    color: #666;
+    padding: 10px;
+}
+
+.album-upload-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.song-title-input {
+    margin-top: 12px;
+    width: 90%;
+    padding: 6px;
+    font-family: 'Cute Cat', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    border: 2px solid rgb(132, 140, 153);
+    border-radius: 8px;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.player-controls {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+    color: #333;
+    font-family: monospace, sans-serif;
+}
+
+#habittitle-input {
+    font-family: 'Cute Cat', sans-serif;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px dashed rgb(132, 140, 153);
+    outline: none;
+    color: #000;
+    width: 65%;
+    padding: 2px 5px;
+}
+
+#habittitle-input::placeholder {
+    color: #777;
+}
+
+.resetbutton {
+    background-color: #fff;
+    border: 2px solid rgb(132, 140, 153);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(132, 140, 153);
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+}
+
+</style>
+
+<script>
+    /* get the date */
+    var date = new Date();
+    console.log(date);
+
+    /* extract current date info*/
+    var currentMonth = date.getMonth();
+    var currentDay = date.getDay();
+    var currentDate = date.getDate();
+    var currentYear = date.getFullYear();
+
+    console.log(currentMonth); // cuurent month - 1
+    console.log(currentDay); // current day of the week (0-6)
+    console.log(currentDate); // current date/number
+    console.log(currentYear); // current year
+
+    /* date info */
+    var months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+
+    /* set correct month*/
+    var title = document.getElementById("title");
+        title.innerHTML = "⚝ " + months[currentMonth] + " ⚝";
+    /*update calender info*/
+        /*set total days in month*/
+        var dayInTheMonthList = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var daysInThisMonth = dayInTheMonthList[currentMonth];
+
+        var dayscompleted = 0;
+        var totalDays = document.getElementById("totaldays");
+        
+        /*setup calener days*/
+        var dayCount = 0; 
+        var rowCount = 0;
+        var days = document.getElementsByClassName("days");
+        for(var i = 0; i < days.length; i++){
+            var day = days[rowCount].getElementsByClassName("day");
+            for ( var j=0; j < day.length; j++){
+                if(dayCount == currentDate -1){
+                    day[j].setAttribute("style", "background-color:rgb(247, 219, 255);");
+
+                }
+
+                if (dayCount < daysInThisMonth){
+                    day[j].innerHTML = dayCount + 1;
+                    day[j].setAttribute("id", "day" + (dayCount + 1));
+                    dayCount++;
+                } else {
+                        day[j].innerHTML = "";
+                        day[j].setAttribute("style", "background-color: white");
+                    }
+                }
+                rowCount++;
+            }
+    
+    /* initialize completed days */
+    var completed = new Array(31);
+    for (var i = 0; i < dayCount; i++){
+        var tempString = 
+            "" + (currentMonth + 1) + " - " + (i + 1) + " - " + currentYear;
+        console.log("storing date: " + tempString);
+        var tempDay = localStorage.getItem(tempString);
+        console.log(tempDay);
+        if(tempDay == null || tempDay == "false"){
+            localStorage.setItem(tempString, "false");
+        } else if (tempDay == "true") {
+            dayscompleted++;
+        }
+        totalDays.innerHTML = dayscompleted + "/" + daysInThisMonth;
+
+    }
+
+    console.log("completed array: " + completed);
+    console.log("total days completed: " + dayscompleted);
+
+
+    /*check storage and update complete array*/
+    for (var i = 0; i < currentDate; i++){
+        var tempString = 
+            "" + (currentMonth + 1) + " - " + (i + 1) + " - " + currentYear;
+        console.log(tempString);
+
+         var chosenDay = localStorage.getItem(tempString);
+         console.log(i + 1 + ": " + chosenDay);
+         var chosenDayDiv = document.getElementById("day" + (i + 1));
+        if (chosenDay == "true"){
+            chosenDayDiv.style.backgroundColor = "rgb(247, 219, 255)";
+        } else if (chosenDay == "false"){
+            chosenDayDiv.style.backgroundColor = "rgb(211, 240, 253)";
+        }
+    }
+
+    /*update day when clicked*/
+    var dayDivs = document.querySelectorAll(".day");
+    for (var i=0; i<dayCount;i++){
+        dayDivs[i].onclick = function(e){
+           var num = e.target.innerText;
+           var selectedDate = document.getElementById(e.target.id);
+           var storageString =
+            "" + (currentMonth + 1) + " - " + num + " - " + currentYear;
+
+           if(localStorage.getItem(storageString) === "false"){
+            selectedDate.style.backgroundColor = "rgb(247, 219, 255)";
+            localStorage.setItem(storageString, "true");
+            dayscompleted++;
+        }else if(localStorage.getItem(storageString) === "true"){
+            selectedDate.style.backgroundColor = "rgb(211, 240, 253)";
+            localStorage.setItem(storageString, "false");
+            dayscompleted--;
+        }
+
+        if (dayscompleted < 0) dayscompleted = 0;
+        if(dayscompleted > daysInThisMonth) dayscompleted = daysInThisMonth;
+
+        totalDays.innerHTML = dayscompleted + "/" + daysInThisMonth;
+        console.log(dayscompleted, currentDate);
+        if(dayscompleted == daysInThisMonth){
+           alert("yipee! you completed your habit for the month ヾ( ˃ᴗ˂ )◞•*✰");
+        }
+    }
+}
+
+/*reset button*/
+var resetButton = document.getElementById("resetbutton");
+resetButton.onclick = function(){
+    for (var i = 0; i < dayCount; i++){
+        var tempStrings = 
+         "" + (currentMonth + 1) + " - " + (i + 1) + " - " + currentYear;
+        console.log(tempStrings);
+        localStorage.setItem(tempStrings, "false");
+        var curDay = document.getElementById("day" + (i + 1));
+        curDay.style.backgroundColor = "rgb(211, 240, 253)";
+    }
+    dayscompleted = 0;
+    totalDays.innerHTML = dayscompleted + "/" + daysInThisMonth;
+};
+
+
+function openTab(tabId, btnElement) {
+    // 1. Hide all tab content sections
+    var contents = document.getElementsByClassName("tabcontent");
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+    }
+
+    // 2. Remove pink "active" styling from all tab buttons
+    var buttons = document.getElementsByClassName("tabbutton");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active-tab");
+    }
+
+    // 3. Show the target tab section and make the clicked button pink
+    document.getElementById(tabId).style.display = "block";
+    btnElement.classList.add("active-tab");
+}
+
+function triggerUpload(id){
+    document.getElementById('file-input-'+id).click();
+}
+
+function previewImage(event, id) {
+    var reader = new FileReader();
+    reader.onload = function(){
+        var outputImg = document.getElementById('album-img-'+id);
+        var uploadText = document.getElementById('upload-text-'+id);
+
+        outputImg.src = reader.result;
+        outputImg.style.display = 'block'
+        uploadText.style.display = 'none'
+    };
+    if(event.target.files[0]){
+        reader.readAsDataURL(event.target.files[0]);
+    }  
+}
+
+   </script>
+</html>
